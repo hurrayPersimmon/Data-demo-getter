@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 public class dataDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String dataId;
+    private Long dataId;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp dataCreatedAt;
     private String node1;

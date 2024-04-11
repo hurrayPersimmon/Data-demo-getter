@@ -18,9 +18,10 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 public class nodeEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String nodeId;
+    private Long nodeId;
     private String nodeName;
     private Double nodeLatitude;
     private Double nodeLongitude;

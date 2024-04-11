@@ -20,4 +20,5 @@ public class dataController {
         return dataService.getData(datadto);
 
     }
+
 }
