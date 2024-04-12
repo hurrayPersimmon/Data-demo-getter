@@ -15,11 +15,8 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 public class dataDto {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dataId;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp dataCreatedAt;
     private String node1;
     private String node2;
     private Integer birthYear;
@@ -35,7 +32,7 @@ public class dataDto {
     private Double weightOptimal;
 
     public dataEntity toEntity() {
-        return new dataEntity(dataId, dataCreatedAt, node1, node2, birthYear, gender,
+        return new dataEntity(dataId, node1, node2, birthYear, gender,
                 height, weight, walkSpeed, temperature, precipitationProbability,
                 precipitation, takeTime, weightShortest, weightOptimal);
     }

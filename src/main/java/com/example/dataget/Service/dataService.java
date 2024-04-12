@@ -18,12 +18,14 @@ public class dataService {
 
     public dataEntity getData(dataDto datadto) {
         dataEntity data = datadto.toEntity();
-        nodeEntity nodeOne = nodeRepository.findByNodeName(datadto.getNode1());
-        nodeEntity nodeTwo = nodeRepository.findByNodeName(datadto.getNode2());
+        nodeEntity nodeOne = nodeRepository.findByNodeName(data.getNode1());
+        nodeEntity nodeTwo = nodeRepository.findByNodeName(data.getNode2());
+
 
         double distance = getDistance(nodeTwo, nodeOne);
         double deltaAltitude = nodeTwo.getNodeAltitude() - nodeOne.getNodeAltitude();
         double angle = Math.toDegrees(Math.atan(deltaAltitude/ distance));
+        data.setWeightShortest(distance);
         data.setWeightOptimal(angle);
         return dataRepository.save(data);
     }

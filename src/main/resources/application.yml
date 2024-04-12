@@ -1,0 +1,33 @@
+# database ?? ??
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url : jdbc:h2:mem:testdb
+    username : sa
+    password : password
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.64.3:33306/calender
+#    username: hurray
+#    password: 1234
+#  thymeleaf:
+#    cache: false
+
+  # spring data jpa ??
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL57Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: true
+
+  h2:
+    console:
+      enabled: true
+
+  rsocket:
+    server:
+      port: 60002

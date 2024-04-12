@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.sql.Timestamp;
@@ -17,12 +18,10 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Setter
 @NoArgsConstructor
-public class dataEntity {
+public class dataEntity extends BaseTimeEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dataId;
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Timestamp dataCreatedAt;
     private String node1;
     private String node2;
     private Integer birthYear;
